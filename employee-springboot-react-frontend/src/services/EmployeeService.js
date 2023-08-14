@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 const EMPLOYEE_API_BASE_URL = "http://localhost:8080/api/v1/employees/all"
-const EMPLOYEE_API = "http://localhost:8080/api/v1/employees/update"
+const EMPLOYEE_API = "http://localhost:8080/api/v1/employees"
+const EMPLOYEE_API_UPDATE = "http://localhost:8080/api/v1/employees/update"
 const EMPLOYEE_API_DELETE = "http://localhost:8080/api/v1/employees/delete"
 
 class EmployeeService {
@@ -19,7 +20,7 @@ class EmployeeService {
     }
 
     updateEmployee(employee, employeeId){
-        return axios.put(EMPLOYEE_API + '/' + employeeId, employee);
+        return axios.put(EMPLOYEE_API_UPDATE + '/' + employeeId, employee);
     }
 
     deleteEmployee(employeeId){

@@ -12,10 +12,6 @@ export default class ListEmployeeComponent extends Component {
         this.deleteEmployee = this.deleteEmployee.bind(this);
     }
 
-    viewEmployee(id){
-        this.props.history.push(`/view-employee/${id}`);
-    }
-
     deleteEmployee(id){
         EmployeeService.deleteEmployee(id).then ( res => {
             this.setState({employees: this.state.employees.filter(employee => employee.id !== id)});
@@ -63,7 +59,6 @@ export default class ListEmployeeComponent extends Component {
                                             Update
                                         </Link>
                                         <button onClick={ () => this.deleteEmployee(employee.id)} className='btn btn-danger' style={{marginLeft: "10px"}}>Delete</button>
-                                        <button onClick={ () => this.viewEmployee(employee.id)} className='btn btn-info' style={{marginLeft: "10px"}}>View</button>
                                         <Link
                                             to={`/view-employee/${employee.id}`}
                                             className="btn btn-info"

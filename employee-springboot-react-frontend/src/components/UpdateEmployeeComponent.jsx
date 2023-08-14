@@ -17,7 +17,7 @@ export default function UpdateEmployeeComponent() {
             setEmployee({
                 firstname: employeeData.firstname,
                 lastname: employeeData.lastname,
-                emailId: employeeData.email
+                emailId: employeeData.emailId
             });
         });
     }, [id]);
@@ -35,7 +35,7 @@ export default function UpdateEmployeeComponent() {
         EmployeeService.updateEmployee(updatedEmployee, id).then((res) => {
             console.log('Employee updated successfully.');
             // Redirect to employees list page
-            // You might need to handle this redirection as per your app's structure
+            window.location.href = '/employees'; 
         });
     };
 
