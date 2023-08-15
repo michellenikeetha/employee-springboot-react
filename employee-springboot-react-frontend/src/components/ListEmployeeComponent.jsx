@@ -30,7 +30,7 @@ export default class ListEmployeeComponent extends Component {
                 <h2 className="text-center">Employees List</h2>
 
                 <div className="row">
-                    <Link to="/add-employees" className="btn btn-primary">
+                    <Link to="/add-employees/-1" className="btn btn-primary">
                         Add Employee
                     </Link>
                 </div>
@@ -53,7 +53,7 @@ export default class ListEmployeeComponent extends Component {
                                     <td>{employee.emailId}</td>
                                     <td>
                                         <Link
-                                            to={`/update-employees/${employee.id}`}
+                                            to={`/add-employees/${employee.id}`}
                                             className="btn btn-info"
                                         >
                                             Update
